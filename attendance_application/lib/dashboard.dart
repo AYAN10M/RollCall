@@ -14,19 +14,21 @@ class _MyDashboardState extends State<MyDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Transform.scale(
-          scale: 2,
-          child: Switch(
-              activeColor: Colors.deepPurple,
-              value: isSwitched,
-              onChanged: (value) {
-                setState(() {
-                  isSwitched = value;
-                  // take the switch output from here
-                  print(isSwitched);
-                });
-              }),
-        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Transform.scale(
+            scale: 2,
+            child: Switch(
+                activeColor: Colors.deepPurple,
+                value: isSwitched,
+                onChanged: (value) {
+                  setState(() {
+                    isSwitched = value;
+                    // take the switch output from here
+                    print(isSwitched);
+                  });
+                }),
+          ),
+        ]),
       ),
     );
   }
