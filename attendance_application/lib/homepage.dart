@@ -36,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.deepPurple,
         centerTitle: true,
       ),
-      body: Expanded(child: _screens[_selectedIndex]),
+      body: Container(child: _screens[_selectedIndex]),
+
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.deepPurple,
         selectedItemColor: Colors.white,
