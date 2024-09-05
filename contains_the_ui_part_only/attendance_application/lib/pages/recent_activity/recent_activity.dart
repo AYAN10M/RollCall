@@ -204,10 +204,19 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                       );
                     },
                   )
-                : const Center(
-                    child: Text(
-                      'No attendance data for this day.',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                : Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: const Text(
+                        'No attendance data for this day.',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
                     ),
                   ),
           ),
