@@ -95,7 +95,11 @@ flutter:
       fonts:
         - asset: assets/fonts/RedHatDisplay-Regular.ttf
           style: normal
-      
+    
+    - family: Tomorrow
+      fonts:
+        - asset: assets/fonts/Tomorrow-Regular.ttf
+          style: normal
       
   #   - family: Trajan Pro
   #     fonts:

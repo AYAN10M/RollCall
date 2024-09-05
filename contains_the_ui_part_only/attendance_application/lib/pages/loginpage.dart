@@ -31,24 +31,26 @@ class _MyLoginPageState extends State<MyLoginPage> {
                 const Text(
                   'RollCall',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
+                    color: Color.fromARGB(255, 237, 246, 249),
+                    fontSize: 72,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Arial',
+                    fontFamily: 'GreatVibes',
                   ),
                 ),
+
                 const SizedBox(height: 10),
                 // Sign in label
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.login, color: Colors.white, size: 40),
+                    Icon(Icons.login, color: Colors.white, size: 30),
                     SizedBox(width: 10),
                     Text(
                       'SIGN IN',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30,
+                        fontFamily: 'Tomorrow',
                         fontWeight: FontWeight.bold,
                         letterSpacing: 2,
                       ),
@@ -63,6 +65,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                     labelText: 'Sign In with email address',
                     labelStyle: const TextStyle(
                       color: Colors.white70,
+                      fontFamily: 'Tomorrow',
                       fontSize: 14,
                     ),
                     filled: true,
@@ -84,6 +87,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                     labelText: 'Password',
                     labelStyle: const TextStyle(
                       color: Colors.white70,
+                      fontFamily: 'Tomorrow',
                       fontSize: 14,
                     ),
                     filled: true,
@@ -104,8 +108,8 @@ class _MyLoginPageState extends State<MyLoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          const Color(0xFF2366F0), // Blue button color
+                      backgroundColor: const Color.fromARGB(
+                          255, 0, 109, 119), // Blue button color
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -123,30 +127,20 @@ class _MyLoginPageState extends State<MyLoginPage> {
                       'CONTINUE',
                       style: TextStyle(
                         color: Colors.white,
+                        fontFamily: 'Tomorrow',
                         fontSize: 16,
                         letterSpacing: 2,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
-
-                // Terms and conditions
-                const Text(
-                  'By registering you agree with our Terms & Conditions',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 12,
-                    decoration: TextDecoration.underline,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 50),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.1),
                 // Copyright
                 const Text(
-                  'COPYRIGHT (C) 2022 ONFLOW DESIGN.',
+                  'COPYRIGHT (C) 2024 TEAM DEVDYNAMO',
                   style: TextStyle(
                     color: Colors.white60,
+                    fontFamily: 'Tomorrow',
                     fontSize: 12,
                   ),
                 ),

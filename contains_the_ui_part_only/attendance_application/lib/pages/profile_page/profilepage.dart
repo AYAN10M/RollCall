@@ -74,7 +74,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                         Icon(
                           Icons.email,
                           color: Colors.white70,
-                          size: 16,
+                          size: 18,
                         ),
                         SizedBox(width: 8),
                         Text(
@@ -82,7 +82,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white70,
-                            fontFamily: 'RedHatDisplay',
+                            fontFamily: 'Tomorrow',
                           ),
                         ),
                       ]),
@@ -92,14 +92,14 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           Icon(
                             Icons.phone,
                             color: Colors.white70,
-                            size: 16,
+                            size: 18,
                           ),
                           SizedBox(width: 8),
                           Text(
                             '+123 456 7890',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'RedHatDisplay',
+                              fontFamily: 'Tomorrow',
                               color: Colors.white70,
                             ),
                           ),
@@ -111,14 +111,14 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           Icon(
                             Icons.work,
                             color: Colors.white70,
-                            size: 16,
+                            size: 18,
                           ),
                           SizedBox(width: 8),
                           Text(
                             'Software Developer',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'RedHatDisplay',
+                              fontFamily: 'Tomorrow',
                               color: Colors.white70,
                             ),
                           ),
