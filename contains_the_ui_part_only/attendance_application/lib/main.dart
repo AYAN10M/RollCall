@@ -1,4 +1,3 @@
-import 'package:attendance_application/pages/homepage.dart';
 import 'package:attendance_application/pages/loginpage.dart';
 import 'package:flutter/material.dart';
 

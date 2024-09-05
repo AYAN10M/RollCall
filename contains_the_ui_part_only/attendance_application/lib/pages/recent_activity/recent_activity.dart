@@ -106,12 +106,21 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: const Text('Recent Activity'),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           Center(
             child: Container(
-              color: Colors.white,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20.0),
+              ),
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width * 0.9,
               child: TableCalendar(
@@ -179,7 +188,7 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
           // Display attendance details for the selected day
           Builder(builder: (context) {
             print(_selectedDay);
-            print(_getEventsForDay(_selectedDay??DateTime.now()));
+            print(_getEventsForDay(_selectedDay ?? DateTime.now()));
             return (_selectedEvents.isNotEmpty)
                 ? Center(
                     child: Container(

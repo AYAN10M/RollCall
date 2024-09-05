@@ -40,21 +40,34 @@ class _MyTabContainerState extends State<MyTabContainer>
         fontSize: 15.0,
       ),
       unselectedTextStyle: const TextStyle(
-        color: Colors.black,
+        color: Color.fromARGB(255, 0, 109, 119),
         fontSize: 13.0,
       ),
       colors: const [
-        Colors.red,
-        Colors.green,
+        Color.fromARGB(255, 131, 197, 190),
+        Color.fromARGB(255, 226, 149, 120),
       ],
       tabs: const [
-        Text('Personal Info'),
-        Text('Company Info'),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Icon(
+            Icons.person,
+            color: Color.fromARGB(255, 237, 246, 249),
+          ),
+          Text('Personal Info')
+        ]),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Icon(
+            Icons.person,
+            color: Color.fromARGB(255, 237, 246, 249),
+          ),
+          Text('Company Info'),
+        ]),
       ],
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,
           height: MediaQuery.of(context).size.height * 0.4,
+          // data for child 1 will be added later when backend is added
           child: const Text('Child 1'),
         ),
         SizedBox(

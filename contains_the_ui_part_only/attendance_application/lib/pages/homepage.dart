@@ -47,9 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: const Color(0xFF424242),
+              color: const Color.fromARGB(255, 0, 109, 119),
               showLabel: false,
-              notchColor: const Color(0xFF424242),
+              notchColor: const Color.fromARGB(255, 0, 109, 119),
 
               /// Restart app if you change removeMargins
               removeMargins: false,
@@ -59,29 +59,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.history,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 131, 197, 190),
                   ),
                   activeItem: Icon(
                     Icons.history,
+                    color: Colors.white,
+                  ),
+                  itemLabel: 'History',
+                ),
+                BottomBarItem(
+                  inActiveItem: Icon(
+                    Icons.home_filled,
+                    color: Color.fromARGB(255, 131, 197, 190),
+                  ),
+                  activeItem: Icon(
+                    Icons.home_filled,
                     color: Colors.white,
                   ),
                   itemLabel: 'Home',
                 ),
                 BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.home_filled,
-                    color: Colors.grey,
-                  ),
-                  activeItem: Icon(
-                    Icons.history,
-                    color: Colors.white,
-                  ),
-                  itemLabel: 'Settings',
-                ),
-                BottomBarItem(
-                  inActiveItem: Icon(
                     Icons.person,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 131, 197, 190),
                   ),
                   activeItem: Icon(
                     Icons.person,

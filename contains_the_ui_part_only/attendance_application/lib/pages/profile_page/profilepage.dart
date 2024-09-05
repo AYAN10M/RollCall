@@ -12,7 +12,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: const Color.fromARGB(255, 237, 246, 249),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -20,14 +20,17 @@ class _MyProfilePageState extends State<MyProfilePage> {
               padding: const EdgeInsets.all(20),
               height: MediaQuery.of(context).size.height * 0.25,
               decoration: const BoxDecoration(
-                color: Colors.blue,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10,
-                    offset: Offset(0, 5),
-                  ),
-                ],
+                color: Color.fromARGB(255, 0, 109, 119),
+
+                // Add this to add shadow to the container
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.black26,
+                //     blurRadius: 10,
+                //     offset: Offset(0, 10),
+                //   ),
+                // ],
+
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
@@ -46,7 +49,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                         fit: BoxFit.cover,
                       ),
                       border: Border.all(
-                        color: Colors.white,
+                        color: const Color.fromARGB(255, 237, 246, 249),
                         width: 4,
                       ),
                     ),
@@ -60,9 +63,10 @@ class _MyProfilePageState extends State<MyProfilePage> {
                       Text(
                         'Adolf Hitler',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          fontSize: 30,
+                          // fontWeight: FontWeight.bold,
+                          fontFamily: 'GreatVibes',
+                          color: Color.fromARGB(255, 237, 246, 249),
                         ),
                       ),
                       SizedBox(height: 8),
@@ -78,6 +82,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white70,
+                            fontFamily: 'RedHatDisplay',
                           ),
                         ),
                       ]),
@@ -94,6 +99,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             '+123 456 7890',
                             style: TextStyle(
                               fontSize: 16,
+                              fontFamily: 'RedHatDisplay',
                               color: Colors.white70,
                             ),
                           ),
@@ -112,6 +118,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             'Software Developer',
                             style: TextStyle(
                               fontSize: 16,
+                              fontFamily: 'RedHatDisplay',
                               color: Colors.white70,
                             ),
                           ),
