@@ -93,7 +93,6 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
-
     if (!isSameDay(_selectedDay, selectedDay)) {
       setState(() {
         _focusedDay = focusedDay;
@@ -116,7 +115,6 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width * 0.9,
               child: TableCalendar(
-
                 focusedDay: _focusedDay,
 
                 firstDay: DateTime(2022, 1, 1),
@@ -143,7 +141,7 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                 },
                 eventLoader: _getEventsForDay,
 
-                startingDayOfWeek: StartingDayOfWeek.monday,
+                // startingDayOfWeek: StartingDayOfWeek.monday,
 
                 calendarStyle: CalendarStyle(
                   // Highlight Saturday and Sunday in light red
@@ -179,12 +177,10 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
           ),
           const SizedBox(height: 10),
           // Display attendance details for the selected day
-          Builder(
-            builder: (context) {
-          
-              return (_selectedEvents.isNotEmpty)?
-                   Center(
-                      child: Container(
+          Builder(builder: (context) {
+            return (_selectedEvents.isNotEmpty)
+                ? Center(
+                    child: Container(
                         padding: const EdgeInsets.all(8),
                         height: MediaQuery.of(context).size.height * 0.2,
                         width: MediaQuery.of(context).size.width * 0.8,
@@ -192,8 +188,7 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-
-                        child:  ListView(
+                        child: ListView(
                           children: _selectedEvents
                               .map((Event event) => ListTile(
                                     title: Text(event.checkIn),
@@ -201,28 +196,24 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                                     trailing: Text(event.totalHours),
                                   ))
                               .toList(),
-                        )
-                        
+                        )),
+                  )
+                : Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    )
-
-                   :Center(
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        height: MediaQuery.of(context).size.height * 0.2,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: const Text(
-                          'No attendance data for this day.',
-                          style: TextStyle(color: Colors.black, fontSize: 16),
-                        ),
+                      child: const Text(
+                        'No attendance data for this day.',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
-                    );
-            }
-          ),
+                    ),
+                  );
+          }),
         ],
       ),
     );
