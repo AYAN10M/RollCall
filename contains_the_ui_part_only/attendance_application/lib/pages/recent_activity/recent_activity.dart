@@ -13,70 +13,73 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
   DateTime? _selectedDay;
   CalendarFormat _calendarFormat = CalendarFormat.month;
   List<Event> _selectedEvents = [];
+  DateTime normalizeDate(DateTime date) {
+    return DateTime(date.year, date.month, date.day);
+  }
 
   // Predefined attendance data for August 15, 2024, to September 4, 2024
   Map<DateTime, List<Event>> events = {
-    DateTime(2024, 8, 15): [
+    DateTime.utc(2024, 8, 15): [
       Event('Check-in: 9:00 AM', 'Check-out: 5:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 16): [
+    DateTime.utc(2024, 8, 16): [
       Event('Check-in: 10:00 AM', 'Check-out: 6:30 PM', 'Total: 8h 30m')
     ],
-    DateTime(2024, 8, 17): [
+    DateTime.utc(2024, 8, 17): [
       Event('Check-in: 9:30 AM', 'Check-out: 5:30 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 18): [
+    DateTime.utc(2024, 8, 18): [
       Event('Check-in: 10:00 AM', 'Check-out: 4:30 PM', 'Total: 6h 30m')
     ],
-    DateTime(2024, 8, 19): [
+    DateTime.utc(2024, 8, 19): [
       Event('Check-in: 8:45 AM', 'Check-out: 5:15 PM', 'Total: 8h 30m')
     ],
-    DateTime(2024, 8, 20): [
+    DateTime.utc(2024, 8, 20): [
       Event('Check-in: 9:15 AM', 'Check-out: 5:45 PM', 'Total: 8h 30m')
     ],
-    DateTime(2024, 8, 21): [
+    DateTime.utc(2024, 8, 21): [
       Event('Check-in: 9:30 AM', 'Check-out: 5:30 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 22): [
+    DateTime.utc(2024, 8, 22): [
       Event('Check-in: 10:00 AM', 'Check-out: 6:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 23): [
+    DateTime.utc(2024, 8, 23): [
       Event('Check-in: 9:15 AM', 'Check-out: 5:15 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 24): [
+    DateTime.utc(2024, 8, 24): [
       Event('Check-in: 10:00 AM', 'Check-out: 4:30 PM', 'Total: 6h 30m')
     ],
-    DateTime(2024, 8, 25): [
+    DateTime.utc(2024, 8, 25): [
       Event('Check-in: 9:00 AM', 'Check-out: 5:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 26): [
+    DateTime.utc(2024, 8, 26): [
       Event('Check-in: 10:00 AM', 'Check-out: 6:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 27): [
+    DateTime.utc(2024, 8, 27): [
       Event('Check-in: 9:45 AM', 'Check-out: 6:15 PM', 'Total: 8h 30m')
     ],
-    DateTime(2024, 8, 28): [
+    DateTime.utc(2024, 8, 28): [
       Event('Check-in: 9:00 AM', 'Check-out: 5:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 29): [
+    DateTime.utc(2024, 8, 29): [
       Event('Check-in: 9:30 AM', 'Check-out: 5:30 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 30): [
+    DateTime.utc(2024, 8, 30): [
       Event('Check-in: 10:00 AM', 'Check-out: 6:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 8, 31): [
+    DateTime.utc(2024, 8, 31): [
       Event('Check-in: 9:00 AM', 'Check-out: 5:00 PM', 'Total: 8h')
     ],
-    DateTime(2024, 9, 1): [
+    DateTime.utc(2024, 9, 1): [
       Event('Check-in: 10:15 AM', 'Check-out: 6:15 PM', 'Total: 8h')
     ],
-    DateTime(2024, 9, 2): [
+    DateTime.utc(2024, 9, 2): [
       Event('Check-in: 9:30 AM', 'Check-out: 5:30 PM', 'Total: 8h')
     ],
-    DateTime(2024, 9, 3): [
+    DateTime.utc(2024, 9, 3): [
       Event('Check-in: 9:15 AM', 'Check-out: 5:15 PM', 'Total: 8h')
     ],
-    DateTime(2024, 9, 4): [
+    DateTime.utc(2024, 9, 4): [
       Event('Check-in: 10:00 AM', 'Check-out: 6:00 PM', 'Total: 8h')
     ],
   };
@@ -86,10 +89,11 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
   ];
 
   List<Event> _getEventsForDay(DateTime day) {
-    return events[day] ?? [];
+    return events[normalizeDate(day)] ?? [];
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
+
     if (!isSameDay(_selectedDay, selectedDay)) {
       setState(() {
         _focusedDay = focusedDay;
@@ -112,24 +116,35 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width * 0.9,
               child: TableCalendar(
+
                 focusedDay: _focusedDay,
+
                 firstDay: DateTime(2022, 1, 1),
+
                 lastDay: DateTime(2030, 1, 1),
+
                 calendarFormat: _calendarFormat,
+
                 selectedDayPredicate: (day) {
                   return isSameDay(_selectedDay, day);
                 },
+
                 onDaySelected: _onDaySelected,
+
                 onFormatChanged: (format) {
                   setState(() {
                     _calendarFormat = format;
                   });
                 },
+
                 onPageChanged: (focusedDay) {
                   _focusedDay = focusedDay;
+                  print(_focusedDay);
                 },
                 eventLoader: _getEventsForDay,
+
                 startingDayOfWeek: StartingDayOfWeek.monday,
+
                 calendarStyle: CalendarStyle(
                   // Highlight Saturday and Sunday in light red
                   weekendTextStyle: TextStyle(color: Colors.red[400]),
@@ -164,61 +179,49 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
           ),
           const SizedBox(height: 10),
           // Display attendance details for the selected day
-          Expanded(
-            child: _selectedEvents.isNotEmpty
-                ? ListView.builder(
-                    itemCount: _selectedEvents.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 16.0),
-                        padding: const EdgeInsets.all(16.0),
+          Builder(
+            builder: (context) {
+          
+              return (_selectedEvents.isNotEmpty)?
+                   Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              blurRadius: 6,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              _selectedEvents[index].checkIn,
-                              style: const TextStyle(fontSize: 16),
-                            ),
-                            Text(
-                              _selectedEvents[index].checkOut,
-                              style: const TextStyle(fontSize: 16),
-                            ),
-                            Text(
-                              _selectedEvents[index].totalHours,
-                              style: const TextStyle(fontSize: 16),
-                            ),
-                          ],
+
+                        child:  ListView(
+                          children: _selectedEvents
+                              .map((Event event) => ListTile(
+                                    title: Text(event.checkIn),
+                                    subtitle: Text(event.checkOut),
+                                    trailing: Text(event.totalHours),
+                                  ))
+                              .toList(),
+                        )
+                        
+                      ),
+                    )
+
+                   :Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                      );
-                    },
-                  )
-                : Center(
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
+                        child: const Text(
+                          'No attendance data for this day.',
+                          style: TextStyle(color: Colors.black, fontSize: 16),
+                        ),
                       ),
-                      child: const Text(
-                        'No attendance data for this day.',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
-                      ),
-                    ),
-                  ),
+                    );
+            }
           ),
         ],
       ),
