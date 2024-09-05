@@ -1,4 +1,4 @@
-import 'package:attendance_application/pages/tab_container.dart';
+import 'package:attendance_application/pages/profile_page/tab_container.dart';
 import 'package:flutter/material.dart';
 
 class MyProfilePage extends StatefulWidget {
@@ -28,7 +28,10 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     offset: Offset(0, 5),
                   ),
                 ],
-                borderRadius: BorderRadius.all(Radius.circular(25)),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
               ),
               child: Row(
                 children: [

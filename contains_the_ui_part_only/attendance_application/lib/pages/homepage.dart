@@ -1,6 +1,6 @@
 import 'package:attendance_application/pages/dashboard.dart';
-import 'package:attendance_application/pages/profilepage.dart';
-import 'package:attendance_application/pages/recent_activity.dart';
+import 'package:attendance_application/pages/profile_page/profilepage.dart';
+import 'package:attendance_application/pages/recent_activity/recent_activity.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 
@@ -58,18 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
               bottomBarItems: const [
                 BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.home_filled,
+                    Icons.history,
                     color: Colors.grey,
                   ),
                   activeItem: Icon(
-                    Icons.home_filled,
+                    Icons.history,
                     color: Colors.white,
                   ),
                   itemLabel: 'Home',
                 ),
                 BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.history,
+                    Icons.home_filled,
                     color: Colors.grey,
                   ),
                   activeItem: Icon(
@@ -98,7 +98,6 @@ class _MyHomePageState extends State<MyHomePage> {
               kBottomRadius: 30,
             )
           : null,
-
     );
   }
 }

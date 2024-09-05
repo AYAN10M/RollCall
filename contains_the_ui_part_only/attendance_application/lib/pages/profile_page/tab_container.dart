@@ -52,12 +52,12 @@ class _MyTabContainerState extends State<MyTabContainer>
         Text('Company Info'),
       ],
       children: [
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,
           height: MediaQuery.of(context).size.height * 0.4,
           child: const Text('Child 1'),
         ),
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,
           height: MediaQuery.of(context).size.height * 0.4,
           child: const Text('Child 2'),
