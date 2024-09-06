@@ -12,12 +12,10 @@ class _MyDashboardState extends State<MyDashboard> {
   bool isSwitched = false;
 
   Future<Position> getCurrentLocation() async {
-
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     LocationPermission permission;
 
     if (!serviceEnabled) {
-
       return Future.error('Location services are disabled.');
     }
 
@@ -30,11 +28,8 @@ class _MyDashboardState extends State<MyDashboard> {
     }
 
     if (permission == LocationPermission.deniedForever) {
-
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
-      
-      
     }
 
     return await Geolocator.getCurrentPosition();
@@ -48,15 +43,14 @@ class _MyDashboardState extends State<MyDashboard> {
           Transform.scale(
             scale: 2,
             child: Switch(
-                activeColor: Colors.deepPurple,
+                activeColor: const Color.fromARGB(255, 83, 76, 95),
                 value: isSwitched,
                 onChanged: (value) {
                   setState(() {
                     isSwitched = value;
                     getCurrentLocation().then((value) {
                       print(value);
-                    })
-                    .catchError((error) {
+                    }).catchError((error) {
                       print(error);
                     });
 
