@@ -40,6 +40,7 @@ dependencies:
   tab_container: ^3.5.3
   syncfusion_flutter_calendar: ^26.2.12
   geolocator: ^13.0.1
+  fluttertoast: ^8.2.8
   
 
 dev_dependencies:

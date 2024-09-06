@@ -28,8 +28,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// Widget list
   final List<Widget> bottomBarPages = [
-    const MyRecentActivity(),
     const MyDashBoard(),
+    const MyRecentActivity(),
     const MyProfilePage(),
   ];
 
@@ -58,22 +58,22 @@ class _MyHomePageState extends State<MyHomePage> {
               bottomBarItems: const [
                 BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.history,
+                    Icons.home_filled,
                     color: Color.fromARGB(255, 131, 197, 190),
                   ),
                   activeItem: Icon(
-                    Icons.history,
+                    Icons.home_filled,
                     color: Colors.white,
                   ),
                   itemLabel: 'History',
                 ),
                 BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.home_filled,
+                    Icons.history,
                     color: Color.fromARGB(255, 131, 197, 190),
                   ),
                   activeItem: Icon(
-                    Icons.home_filled,
+                    Icons.history,
                     color: Colors.white,
                   ),
                   itemLabel: 'Home',

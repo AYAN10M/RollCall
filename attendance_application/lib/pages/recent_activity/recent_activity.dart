@@ -163,11 +163,7 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                   weekendTextStyle: TextStyle(color: Colors.red[400]),
                   // Draw a red line at the bottom of holidays
                   holidayTextStyle: TextStyle(color: Colors.red[400]),
-                  holidayDecoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(color: Colors.red, width: 2.0),
-                    ),
-                  ),
+                  holidayDecoration: const BoxDecoration(),
                   // Add a black line only under dates with events
                   defaultDecoration: BoxDecoration(
                     border: Border(
@@ -200,10 +196,10 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                     child: Container(
                         padding: const EdgeInsets.all(8),
                         height: MediaQuery.of(context).size.height * 0.2,
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery.of(context).size.width * 0.9,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: ListView(
                           children: _selectedEvents
@@ -219,10 +215,10 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
                     child: Container(
                       padding: const EdgeInsets.all(8),
                       height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: const Text(
                         'No attendance data for this day.',
