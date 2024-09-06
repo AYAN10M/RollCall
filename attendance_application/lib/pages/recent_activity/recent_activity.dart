@@ -105,9 +105,15 @@ class _MyRecentActivityState extends State<MyRecentActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: const Color.fromARGB(255, 131, 197, 190),
       appBar: AppBar(
-        title: const Text('Recent Activity'),
+        backgroundColor: const Color.fromARGB(255, 0, 109, 119),
+        title: const Text('Recent Activity',
+            style: TextStyle(
+                color: Color.fromARGB(255, 237, 246, 249),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Tomorrow')),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
